@@ -11,7 +11,9 @@
 <script>
     $(function () {
         $("#button").click(function () {
-            window.open('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354','_system');
+            var w = (window.parent)?window.parent:window
+            w.location.assign('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354')
+            // window.open('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354','_system');
         });
         $("#button").trigger('click');
     });
