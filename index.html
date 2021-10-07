@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-        var redirectToApp
-        var redirectUrl = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354'
+        // const urlTemp = 'https://xxx.xx/?schema=artizonapp&url=local://index.html#&p=register&t=462734216354'
 
-        redirectToApp = function() {
-            window.opener.location.replace(redirectUrl);
-            window.close();
+        function getParameterByName(name) {
+            const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+
+        var redirectToApp = function() {
+            const schema = window.getParameterByName("schema");
+            const url = window.getParameterByName("url");
+            const page = window.getParameterByName("p");
+            const token = window.getParameterByName("t");
+
+            document.location = schema + '://?url=' + encodeURIComponent(url + '&p=' + page + '&t=' + token);
         };
 
         window.onload = redirectToApp;
