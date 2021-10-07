@@ -6,12 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<button id="button">clicked</button>
+<input id="button" type="hidden" />
 </body>
 <script>
     $(function () {
         $("#button").click(function () {
-            window.open('http://google.com.vn/','_system');
+            window.open('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354','_system');
         });
         $("#button").trigger('click');
     });
