@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Redirecting...</title>
+    <script>
+        var redirectToApp = function() {
+            document.location = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354';
+        };
+
+        window.onload = redirectToApp;
+    </script>
 </head>
 <body>
-<input id="button" type="hidden" />
 </body>
-<script>
-    $(function () {
-        $("#button").click(function () {
-            var w = (window.parent)?window.parent:window
-            w.location.assign('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354')
-            // window.open('artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354','_system');
-        });
-        $("#button").trigger('click');
-    });
-</script>
 </html>
