@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-        var redirectToApp = function() {
-            document.location = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354';
+        var redirectToApp
+
+        redirectToApp = function() {
+            window.opener.location = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354';
+            window.close();
         };
 
         window.onload = redirectToApp;
     </script>
 </head>
 <body>
+<p>Redirecting...</p>
 </body>
 </html>
