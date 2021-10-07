@@ -5,9 +5,10 @@
     <title>Redirecting...</title>
     <script>
         var redirectToApp
+        var redirectUrl = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354'
 
         redirectToApp = function() {
-            window.opener.location = 'artizonapp://?url=local%3A%2F%2Findex.html%23%3Fp%3Dregister%26t%3D462734216354';
+            window.opener.location.replace(redirectUrl);
             window.close();
         };
 
